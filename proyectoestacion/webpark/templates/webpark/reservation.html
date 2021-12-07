@@ -1,0 +1,87 @@
+{% extends "webpark/layout.html" %}
+
+{% block content %}  
+<br>
+<br>
+<br>
+<div class="container" style="background-image:url('https://www.nitro.pe/images/2018/octubre/estacionamiento_vehicular.jpg');">
+  <h1 style="color: rgb(202, 21, 21);"><strong>Listado de Reservas</strong></h1>
+  <style>
+    h1 {text-align: center;}
+   </style>
+  <br>
+        <div class="table-responsive py-2" style="display: flex; align-items: center; justify-content: center;">
+            <table class="table table-dark table-striped" >
+                <thead>
+                    <tr>
+                        <th class="text-center">Id</th>
+                        <th class="text-center">Descripcion</th>
+                        <th class="text-center">Fecha-Entrada</th>
+                        <th class="text-center">Fecha-Salida</th>
+                        <th class="text-center">Monto</th>
+                        <th class="text-center">Id-Estacionamiento</th>
+                        <th class="text-center">Nro-Placa</th>
+                        <th class="text-center">Id-usuario</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for c in response %}
+                    <tr>
+                        <td class="text-center">{{forloop.counter}}</td>
+                        <td class="text-center">{{c.descripcion}}</td>
+                        <td class="text-center">{{c.fecha_entrada}}</td>
+                        <td class="text-center">{{c.fecha_salida}}</td>
+                        <td class="text-center">{{c.monto}}</td>
+                        <td class="text-center">{{c.id_estacionamiento}}</td>
+                        <td class="text-center">{{c.nro_placa}}</td>
+                        <td class="text-center">{{c.id_usuario}}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<!-- ======= Testimonials Section ======= -->
+<div class="container">
+
+  <div class="d-flex justify-content-between align-items-center">
+    <h2 style="margin-top: 20px; color: crimson;"><strong>Comentarios</strong></h2>
+  </div>
+
+</div>
+<section id="testimonials" class="testimonials">
+    <div class="container">
+
+      <div class="row">
+
+        <div class="col-lg-6">
+          <div class="testimonial-item">
+            <img src="https://lh3.googleusercontent.com/proxy/7X2om3T_e_rla8iSraS6VFPO3XIVuWsZrP2qEOTbmnmfH4eR_HaWFCz2cBFm6sxHstb2k5Uot-K3HiZnOvA-WAR-jVKIoWbm2LlQATfRZOi7CF_KT3ZXj9sFmp1Vq4pyGjq-lyeqamI-I9q41mMh" class="testimonial-img" alt="">
+            <h3>Sandra Goodman</h3>
+            <h4>Usuario</h4>
+            <p>
+              <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+              Tu vehiculo en un perfecto lugar de respaldo, que esperas? Recomendado para todos los conductores y a buenos precios 
+              <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+            </p>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="testimonial-item mt-4 mt-lg-0">
+            <img src="https://i.pinimg.com/236x/28/e6/27/28e6271bdc0e8d2383ecbbbe3a49f3d4.jpg" class="testimonial-img" alt="">
+            <h3>Robert Sanchez</h3>
+            <h4>Usuario</h4>
+            <p>
+              <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+              Fue la mejor opcion, no tuve que ir buscando estacionamientos estando en el centro de la ciudad
+              <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section><!-- End Testimonials Section -->
+{% endblock %}
